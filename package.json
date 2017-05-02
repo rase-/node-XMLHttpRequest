@@ -1,10 +1,9 @@
 {
-  "name": "xmlhttprequest",
+  "name": "xmlhttprequest-ssl",
   "description": "XMLHttpRequest for Node",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "author": {
-    "name": "Dan DeFelippi",
-    "url": "http://driverdan.com"
+    "name": "Michael de Wit"
   },
   "keywords": [
     "xhr",
@@ -18,9 +17,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/driverdan/node-XMLHttpRequest.git"
+    "url": "git://github.com/mjwwit/node-XMLHttpRequest.git"
   },
-  "bugs": "http://github.com/driverdan/node-XMLHttpRequest/issues",
+  "bugs": "http://github.com/mjwwit/node-XMLHttpRequest/issues",
   "engines": {
     "node": ">=0.4.0"
   },
