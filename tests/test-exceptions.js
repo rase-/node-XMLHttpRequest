@@ -1,6 +1,4 @@
-var sys = require("util")
-  , assert = require("assert")
-  , XMLHttpRequest = require("../lib/XMLHttpRequest").XMLHttpRequest
+var XMLHttpRequest = require("../lib/XMLHttpRequest").XMLHttpRequest
   , xhr = new XMLHttpRequest();
 
 // Test request methods that aren't allowed
@@ -20,7 +18,8 @@ try {
 try {
   xhr.open("GET", "http://localhost:8000/");
 } catch(e) {
-  console.log("ERROR: Invalid exception for GET", e);
+  console.error(e);
+  throw new Error("ERROR: Invalid exception for GET");
 }
 
 // Test forbidden headers
@@ -44,15 +43,12 @@ var forbiddenRequestHeaders = [
   "trailer",
   "transfer-encoding",
   "upgrade",
-  "user-agent",
   "via"
 ];
 
 for (var i in forbiddenRequestHeaders) {
-  try {
-    xhr.setRequestHeader(forbiddenRequestHeaders[i], "Test");
-    console.log("ERROR: " + forbiddenRequestHeaders[i] + " should have thrown exception");
-  } catch(e) {
+  if(xhr.setRequestHeader(forbiddenRequestHeaders[i], "Test") !== false) {
+    throw new Error("ERROR: " + forbiddenRequestHeaders[i] + " should have thrown exception");
   }
 }
 

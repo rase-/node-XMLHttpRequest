@@ -1,33 +1,35 @@
 {
-  "name": "xmlhttprequest",
+  "name": "xmlhttprequest-ssl",
   "description": "XMLHttpRequest for Node",
-  "version": "1.5.0",
+  "version": "4.0.0",
   "author": {
-    "name": "Dan DeFelippi",
-    "url": "http://driverdan.com"
+    "name": "Michael de Wit"
   },
   "keywords": [
     "xhr",
     "ajax"
   ],
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://creativecommons.org/licenses/MIT/"
-    }
-  ],
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/driverdan/node-XMLHttpRequest.git"
+    "url": "git://github.com/mjwwit/node-XMLHttpRequest.git"
   },
-  "bugs": "http://github.com/driverdan/node-XMLHttpRequest/issues",
+  "bugs": "http://github.com/mjwwit/node-XMLHttpRequest/issues",
   "engines": {
-    "node": ">=0.4.0"
+    "node": ">=13.0.0"
+  },
+  "scripts": {
+    "test": "cd ./tests && node run-test.js"
   },
   "directories": {
     "lib": "./lib",
     "example": "./example"
   },
+  "files": [
+    "lib/XMLHttpRequest.js",
+    "LICENSE",
+    "README.md"
+  ],
   "main": "./lib/XMLHttpRequest.js",
   "dependencies": {}
 }

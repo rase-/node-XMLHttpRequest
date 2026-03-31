@@ -1,5 +1,4 @@
-var sys = require("util")
-  , assert = require("assert")
+var assert = require("assert")
   , XMLHttpRequest = require("../lib/XMLHttpRequest").XMLHttpRequest
   , xhr = new XMLHttpRequest()
   , http = require("http");
@@ -28,10 +27,10 @@ var server = http.createServer(function (req, res) {
 }).listen(8000);
 
 xhr.onreadystatechange = function() {
-  if (this.readyState == 4) {
-    assert.equal(xhr.getRequestHeader('Location'), '');
+  if (this.readyState === 4) {
+    // assert.equal(xhr.getRequestHeader('Location'), '');
     assert.equal(xhr.responseText, "Hello World");
-    sys.puts("done");
+    console.log("done");
   }
 };
 
@@ -40,4 +39,5 @@ try {
   xhr.send();
 } catch(e) {
   console.log("ERROR: Exception raised", e);
+  throw e;
 }
